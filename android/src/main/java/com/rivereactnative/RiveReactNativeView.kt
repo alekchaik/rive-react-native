@@ -91,7 +91,11 @@ class RiveReactNativeView(private val context: ThemedReactContext) : FrameLayout
       }
 
     }
-    riveAnimationView.registerListener(listener)
+
+    riveAnimationView.doOnAttach  {
+      riveAnimationView.registerListener(listener)
+    }
+
     autoplay = false
     addView(riveAnimationView)
   }
